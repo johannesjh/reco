@@ -4,6 +4,9 @@
   "description": "real-time collaboration with forms",
   "main": "server/index.js",
   "scripts": {
+    "start": "node server/index.js",
+    "postinstall": "npm install -g volo && volo install",
+    "postupdate": "volo install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
