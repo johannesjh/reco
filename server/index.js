@@ -42,3 +42,5 @@ io.sockets.on('connection', function (socket) {
         socket.broadcast.emit('unlock', data);
     });
 });
+
+console.log("You can now open http://localhost:8080/ in your webbrowser...");
