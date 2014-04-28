@@ -1,7 +1,9 @@
 reco
 ====
 
-real-time collaboration with forms
+A rapid prototyping tool for real-time collaboration with web forms.
+
+Forked from [raphaelstary/reco](https://github.com/raphaelstary/reco)
 
 Installation
 ------------
