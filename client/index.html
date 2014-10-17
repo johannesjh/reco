@@ -14,28 +14,48 @@
         <a href="#" data-bind="click: toggleShowConfig.bind($root)">
             <i class="icon-cog"></i>
         </a>
-        <div class="popover bottom" style="margin-left: -145px" data-bind="visible: isConfigVisible">
-            <div class="arrow" style="margin-left: 110px"></div>
+        <div class="popover bottom" style="width: 600px; margin-left: -255px" data-bind="visible: isConfigVisible">
+            <div class="arrow" style="margin-left: 220px"></div>
             <div class="popover-inner">
                 <h3 class="popover-title">Config</h3>
 
                 <div class="popover-content">
-                    <label for="merge">merge strategy</label>
-                    <select id="merge" class="span2"
-                        data-bind="options: mergeValues, value: merge">
-                    </select>
-                    <label for="history">history strategy</label>
-                    <select id="history" class="span2"
-                        data-bind="options: historyValues, value: history">
-                    </select>
+                  <form class="form-horizontal">
+                    <div class="control-group">
+                      <label class="control-label" for="merge">merge strategy</label>
+                      <div class="controls">
+                        <select id="merge" class="span2"
+                            data-bind="options: mergeValues, value: merge">
+                        </select>
+                      </div>
+                    </div>
 
-
-                    <label for="notification">notify strategy</label>
-                    <select id="notification" class="span2"
-                        data-bind="options: notificationValues, value: notification">
-                    </select>
-                    <label for="user">user</label>
-                    <input id="user" class="span2" type="text" placeholder="user name" data-bind="value: user">
+                    <div class="control-group">
+                      <label class="control-label" for="history">history strategy</label>
+                      <div class="controls">
+                        <select id="history" class="span2"
+                            data-bind="options: historyValues, value: history">
+                        </select>
+                      </div>
+                    </div>
+                    
+                    <div class="control-group">
+                      <label class="control-label" for="notification">notify strategy</label>
+                      <div class="controls">
+                        <select id="notification" class="span2"
+                            data-bind="options: notificationValues, value: notification">
+                        </select>
+                      </div>
+                    </div>
+                    
+                    <div class="control-group">
+                      <label class="control-label" for="user">user name</label>
+                      <div class="controls">
+                        <input id="user" class="span2" type="text" placeholder="user name" data-bind="value: user">
+                      </div>
+                    </div>
+                    
+                  </form>
                 </div>
             </div>
         </div>
