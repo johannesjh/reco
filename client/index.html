@@ -14,8 +14,8 @@
         <a href="#" data-bind="click: toggleShowConfig.bind($root)">
             <i class="icon-cog"></i>
         </a>
-        <div class="popover bottom" style="width: 350px; margin-left: -325px" data-bind="visible: isConfigVisible">
-            <div class="arrow" style="margin-left: 290px"></div>
+        <div class="popover bottom" style="width: 420px; margin-left: -395px" data-bind="visible: isConfigVisible">
+            <div class="arrow" style="margin-left: 360px"></div>
             <div class="popover-inner">
                 <h3 class="popover-title">Config</h3>
 
@@ -24,34 +24,34 @@
                     <div class="control-group">
                       <label class="control-label" for="merge">Locking and Merging</label>
                       <div class="controls">
-                        <select id="merge" class="span2"
+                        <select id="merge" class="span3"
                             data-bind="options: mergeValues, value: merge">
                         </select>
                       </div>
                     </div>
 
                     <div class="control-group">
-                      <label class="control-label" for="history">history strategy</label>
+                      <label class="control-label" for="history">Editing History</label>
                       <div class="controls">
-                        <select id="history" class="span2"
+                        <select id="history" class="span3"
                             data-bind="options: historyValues, value: history">
                         </select>
                       </div>
                     </div>
                     
                     <div class="control-group">
-                      <label class="control-label" for="notification">notify strategy</label>
+                      <label class="control-label" for="notification">Awareness Notifications</label>
                       <div class="controls">
-                        <select id="notification" class="span2"
+                        <select id="notification" class="span3"
                             data-bind="options: notificationValues, value: notification">
                         </select>
                       </div>
                     </div>
                     
                     <div class="control-group">
-                      <label class="control-label" for="user">user name</label>
+                      <label class="control-label" for="user">User Name</label>
                       <div class="controls">
-                        <input id="user" class="span2" type="text" placeholder="user name" data-bind="value: user">
+                        <input id="user" class="span3" type="text" placeholder="user name" data-bind="value: user">
                       </div>
                     </div>
                     
@@ -141,6 +141,7 @@
 
             </span>
 
+<div style="display: none">
 <label for="inputFour">Input four</label>
 
 <input id="inputFour" type="text"
@@ -262,6 +263,10 @@
             <span class="help-block" data-bind="visible: isMultiMergeVisible">
 
             </span>
+</div>
+
+
+
 
 <legend>different inputs</legend>
 

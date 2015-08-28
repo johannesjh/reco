@@ -1,7 +1,7 @@
 define(function () {
     return {
-        LOCK: 'lock',
-        MULTI: 'multi',
-        PLAIN: 'plain'
+        LOCK: 'Locking',
+        MULTI: 'Automatic Merging with Authorship Visualization',
+        PLAIN: 'Automatic Merging'
     };
 });
