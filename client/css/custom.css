@@ -72,26 +72,21 @@ body {
 .popover.bottom .arrow {
     left: 30px;
 }
-.popover-content {
-    max-height: 600px;
-    overflow: auto;
+
+#config .popover {
+    max-width: none;
 }
 
-.config .popover {
-	margin-left: -325px; 
-	min-width: 320px;
-}
-
-#config .form-horizontal .control-group {
+#config .popover .form-horizontal .control-group {
 	margin-bottom: 5px;
 }
 
 #config .popover .form-horizontal .control-label {
-	width: 110px;
+/*	width: 110px;*/
 }
 
 #config .popover .form-horizontal .controls {
-	margin-left: 120px;
+/*	margin-left: 120px;*/
 }
 
 #config .popover-title {

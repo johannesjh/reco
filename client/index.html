@@ -14,15 +14,15 @@
         <a href="#" data-bind="click: toggleShowConfig.bind($root)">
             <i class="icon-cog"></i>
         </a>
-        <div class="popover bottom" style="width: 600px; margin-left: -255px" data-bind="visible: isConfigVisible">
-            <div class="arrow" style="margin-left: 220px"></div>
+        <div class="popover bottom" style="width: 350px; margin-left: -325px" data-bind="visible: isConfigVisible">
+            <div class="arrow" style="margin-left: 290px"></div>
             <div class="popover-inner">
                 <h3 class="popover-title">Config</h3>
 
                 <div class="popover-content">
                   <form class="form-horizontal">
                     <div class="control-group">
-                      <label class="control-label" for="merge">merge strategy</label>
+                      <label class="control-label" for="merge">Locking and Merging</label>
                       <div class="controls">
                         <select id="merge" class="span2"
                             data-bind="options: mergeValues, value: merge">
