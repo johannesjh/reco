@@ -1,0 +1,3 @@
+exclude = '{$exclude,node_modules}'
+excludeInFolderSearch = "{$excludeInFolderSearch,node_modules}"
+include = '{$include,.gitignore}'
