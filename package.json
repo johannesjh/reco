@@ -4,7 +4,7 @@
   "description": "real-time collaboration with forms",
   "main": "server/index.js",
   "scripts": {
-    "start": "node server/index.js",
+    "start": "node node_modules/nodemon/bin/nodemon.js server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,12 +16,13 @@
     "web"
   ],
   "author": "Raphael Stary",
-  "license": "BSD",
+  "license": "MIT",
   "readmeFilename": "README.md",
   "gitHead": "147d870bf8f14ccd3554e251ab5aa6e627f4431e",
   "dependencies": {
-    "socket.io": "~0.9.15",
-    "node-static": "~0.7.0"
+    "node-static": "~0.7.0",
+    "nodemon": "^1.4.1",
+    "socket.io": "~0.9.15"
   },
   "engine": "node ~0.10.13",
   "volo": {
