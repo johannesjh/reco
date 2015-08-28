@@ -1,6 +1,13 @@
 var staticHttp = require('node-static');
 
-var fileServer = new (staticHttp.Server)('./client');
+var fileServer = new (staticHttp.Server)('./client', {
+    cache: false,
+    headers: {
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Pragma': 'no-cache',
+        'Expires': '0'
+    }
+});
 
 var simpleUserHash = 0;
 
