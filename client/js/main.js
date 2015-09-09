@@ -1,8 +1,8 @@
 require(['require', 'lib/knockout', 'Connector', 'Brain', 'History', 'Messenger', 'constants/MergeConstant',
-    'constants/HistoryConstant', 'constants/NotificationConstant', 'view/ConfigViewModel', 'view/DynamicViewModel',
+    'constants/HistoryConstant', 'constants/NotificationConstant', 'constants/NavigationConstant', 'view/ConfigViewModel', 'view/DynamicViewModel',
     'utils/getValues', 'utils/parseUrlParams', 'UrlJuggler', 'constants/InputConstant', 'App',
     'ConnectionManager', 'HistoryManager', 'SubscriptionManager', 'view/ContentEditableBinding',
-    'lib/domReady'], function (require) {
+    'lib/domReady', 'lib/lodash'], function (require) {
 
     require('lib/domReady');
     var ko = require('lib/knockout'),
@@ -14,6 +14,7 @@ require(['require', 'lib/knockout', 'Connector', 'Brain', 'History', 'Messenger'
         MergeConstant = require('constants/MergeConstant'),
         HistoryConstant = require('constants/HistoryConstant'),
         NotificationConstant = require('constants/NotificationConstant'),
+        NavigationConstant = require('constants/NavigationConstant'),
         ConfigViewModel = require('view/ConfigViewModel'),
         DynamicViewModel = require('view/DynamicViewModel'),
         getValues = require('utils/getValues'),
@@ -23,7 +24,8 @@ require(['require', 'lib/knockout', 'Connector', 'Brain', 'History', 'Messenger'
         App = require('App'),
         ConnectionManager = require('ConnectionManager'),
         HistoryManager = require('HistoryManager'),
-        SubscriptionManager = require('SubscriptionManager');
+        SubscriptionManager = require('SubscriptionManager'),
+        _ = require('lib/lodash');
 
     var URL = location.origin;
 
@@ -33,7 +35,7 @@ require(['require', 'lib/knockout', 'Connector', 'Brain', 'History', 'Messenger'
 
     var urlJuggler = new UrlJuggler(location.pathname, window.history.pushState.bind(window.history));
     var urlParams = parseUrlParams(location.search);
-
+    var ignoreScroll=true;
 
     var mergeParam = urlParams['merge'];
     var mergeStrategy = mergeParam !== undefined ? mergeParam : MergeConstant.PLAIN;
@@ -41,10 +43,12 @@ require(['require', 'lib/knockout', 'Connector', 'Brain', 'History', 'Messenger'
     var historyStrategy = historyParam !== undefined ? historyParam : HistoryConstant.BY_TIME;
     var notifyParam = urlParams['notification'];
     var notificationStrategy = notifyParam !== undefined ? notifyParam : NotificationConstant.BUBBLE;
+    var navigationParam = urlParams['navigation'];
+    var navigationStrategy = navigationParam !== undefined ? navigationParam : NavigationConstant.SYNC;
 
     var configView = new ConfigViewModel(getValues(MergeConstant), getValues(HistoryConstant),
-        getValues(NotificationConstant),
-        mergeStrategy, historyStrategy, notificationStrategy, urlParams['user'], urlParams['css']);
+        getValues(NotificationConstant), getValues(NavigationConstant),
+        mergeStrategy, historyStrategy, notificationStrategy, navigationStrategy, urlParams['user'], urlParams['css']);
 
 
 
@@ -68,7 +72,7 @@ require(['require', 'lib/knockout', 'Connector', 'Brain', 'History', 'Messenger'
         inputIds.push(selects[u].id);
     }
 
-    var view = new DynamicViewModel(inputIds, history, configView.history(), configView.merge(), configView.notification());
+    var view = new DynamicViewModel(connector, inputIds, history, configView.history(), configView.merge(), configView.notification(), configView.navigation());
 
     var messenger = new Messenger(notificationStrategy, view);
 
@@ -85,4 +89,5 @@ require(['require', 'lib/knockout', 'Connector', 'Brain', 'History', 'Messenger'
     var app = new App(view, configView, connector, subscriptionManager, connectionManager);
     app.setUpInputSubscriptions(inputs);
     app.setUpConnection(URL);
+    
 });

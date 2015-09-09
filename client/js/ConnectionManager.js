@@ -1,3 +1,5 @@
+
+
 define(function () {
     function ConnectionManager(view, configView, brain, historyManager, history, messenger) {
         this.view = view;
@@ -6,6 +8,7 @@ define(function () {
         this.historyManager = historyManager;
         this.history = history;
         this.messenger = messenger;
+		
     }
 
     ConnectionManager.prototype.handleInfo = function (data) {
@@ -54,10 +57,24 @@ define(function () {
 
     ConnectionManager.prototype.handleUnlock = function (data) {
         this.view.unlock(data.field);
+		
     };
 
     ConnectionManager.prototype.handleLock = function (data) {
         this.view.lock(data.field);
+    };
+
+    ConnectionManager.prototype.handleScroll = function (data) {
+       		
+		if(this.configView.navigation()== this.configView.navigationValues[0]) {
+		//	this.configView.navigation()=this.configView.navigationValues[0];
+			document.getElementById("mainView").scrollTo(0,data);
+			console.log('got scroll event: ', data);						
+			}
+		else{
+		//	this.configView.navigation()=this.configView.navigationValues[1];
+			return;
+		}
     };
 
     return ConnectionManager;

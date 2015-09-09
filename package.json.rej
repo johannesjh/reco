@@ -1,0 +1,10 @@
+diff a/package.json b/package.json	(rejected hunks)
+@@ -4,7 +4,7 @@
+   "description": "real-time collaboration with forms",
+   "main": "server/index.js",
+   "scripts": {
+-    "start": "node server/index.js",
++    "start": "node node_modules/nodemon/bin/nodemon.js server/index.js",
+     "test": "echo \"Error: no test specified\" && exit 1"
+   },
+   "repository": {

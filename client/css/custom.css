@@ -93,3 +93,11 @@ body {
 	font-weight: bold;
 }
 
+
+#mainView {
+    bottom: 0px; 
+    overflow: scroll; 
+    position: fixed; 
+    top: 39px; 
+    width: 100%;
+}

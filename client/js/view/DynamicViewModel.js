@@ -1,7 +1,7 @@
-define(['lib/knockout', 'constants/HistoryConstant', 'constants/MergeConstant',
-    'constants/InputConstant', 'constants/NotificationConstant'], function (ko, HistoryConstant, MergeConstant, InputConstant, NotificationConstant) {
+define(['lib/knockout', 'lib/lodash', 'constants/HistoryConstant', 'constants/MergeConstant',
+    'constants/InputConstant', 'constants/NotificationConstant', 'constants/NavigationConstant'], function (ko, _, HistoryConstant, MergeConstant, InputConstant, NotificationConstant, NavigationConstant) {
 
-    function DynamicViewModel(inputIds, history, historyStrategy, mergeStrategy, notificationStrategy) {
+    function DynamicViewModel(connector,inputIds, history, historyStrategy, mergeStrategy, notificationStrategy, navigationStrategy) {
         this.historyRepo = history;
 
         var self = this;
@@ -35,7 +35,17 @@ define(['lib/knockout', 'constants/HistoryConstant', 'constants/MergeConstant',
                 self[inputId + InputConstant.DYNAMIC_POSTFIX](false);
             });
         };
-
+        
+        this.navigation = ko.observable(navigationStrategy);
+		
+        this.scrollTop = ko.observable();
+		console.log(this.scrollTop);
+        this.scrollListener = _.throttle(
+                    _.bind(function scrollListener(event) {			
+                     connector.scroll(document.getElementById("mainView").scrollTop);                   
+                    }, this)
+                , 500, { 'leading': false });
+        
         this.history = ko.observable();
         this.isHistoryByFieldVisible = ko.observable(historyStrategy === HistoryConstant.BY_OBJECT);
         this.isHistoryByUserVisible = ko.observable(historyStrategy === HistoryConstant.BY_USER);

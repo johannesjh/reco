@@ -19,5 +19,9 @@ define(function () {
         this.socket.emit('unlock', data);
     };
 
+    Connector.prototype.scroll = function (data) {
+        this.socket.emit('scroll', data);
+    };
+
     return Connector;
 });
