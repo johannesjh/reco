@@ -52,7 +52,7 @@ io.sockets.on('connection', function (socket) {
     socket.on('scroll', function (data) {
 		
 		if(data!=x){
-        console.log('scroll:', data);
+        
         socket.broadcast.emit('scroll', data);
 		x=data;
 		}
