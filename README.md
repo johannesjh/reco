@@ -30,7 +30,19 @@ To start the server run the following command from the root folder:
 Open a web browser and go to `http://localhost:8080`.
 
 
+
+
 License
 -------
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">The rapid prototyping tool for collaborative filling of web forms </span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://www.inso.tuwien.ac.at/home/" property="cc:attributionName" rel="cc:attributionURL">Johannes Harms and Raphael Stary, INSO Research group for Industrial Software</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+
+Credits
+-------
+
+Contributors, in temporal order of their first contribution:
+
+* [Raphael Stary](http://raphaelstary.com/) -- [github.com/raphaelstary](https://github.com/raphaelstary/)
+* [Johannes Harms](http://johannesharms.com) -- [github.com/johannesjh](https://github.com/johannesjh/)
+* Serat Sütcü -- [github.com/SeratStc](https://github.com/SeratStc/)
