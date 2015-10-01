@@ -35,6 +35,8 @@ define(function () {
         this.connector.socket.on('unlock', this.connectionManager.handleUnlock.bind(this.connectionManager));
 
         this.connector.socket.on('lock', this.connectionManager.handleLock.bind(this.connectionManager));
+        
+        this.connector.socket.on('scroll', this.connectionManager.handleScroll.bind(this.connectionManager));
     };
 
     return App;

@@ -1,5 +1,5 @@
 var staticHttp = require('node-static');
-
+var x=0;
 var fileServer = new (staticHttp.Server)('./client', {
     cache: false,
     headers: {
@@ -48,6 +48,17 @@ io.sockets.on('connection', function (socket) {
     socket.on('unlock', function (data) {
         socket.broadcast.emit('unlock', data);
     });
+    
+    socket.on('scroll', function (data) {
+		
+		if(data!=x){
+        
+        socket.broadcast.emit('scroll', data);
+		x=data;
+		}
+		else return;
+    });
+
 });
 
 console.log("You can now open http://localhost:8080/ in your webbrowser...");

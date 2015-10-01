@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>reco - real time collaboration</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
 </head>
@@ -49,6 +50,15 @@
                     </div>
                     
                     <div class="control-group">
+                      <label class="control-label" for="navigation">Navigation</label>
+                      <div class="controls">
+                        <select id="navigation" class="span3"
+                            data-bind="options: navigationValues, value: navigation">
+                        </select>
+                      </div>
+                    </div>
+                    
+                    <div class="control-group">
                       <label class="control-label" for="user">User Name</label>
                       <div class="controls">
                         <input id="user" class="span3" type="text" placeholder="user name" data-bind="value: user">
@@ -63,7 +73,7 @@
     <p class="navbar-text pull-right" data-bind="text: user, css: cssClass" style="margin-right: 15px; padding-left: 10px; padding-right: 10px"></p>
 </div>
 
-<div id="mainView" class="row">
+<div id="mainView" class="row" data-bind="event: { scroll: scrollListener }, prop: { scrollTop: scrollTop }">
 <div id="statusbar" class="navbar navbar-fixed-top" data-bind="visible: isNotificationBarVisible">
     <div class="navbar-inner">
         <div class="container">
@@ -300,7 +310,7 @@
 
 
 <label class="checkbox">
-    <input id="inputTwelveChecked" type="checkbox" value="checkOne" data-bind="checked: inputTwelveChecked">
+    <input id="inputTwelveChecked" type="checkbox" data-bind="checked: inputTwelveChecked">
     check one - input twelve
 </label>
 <span class="help-inline" data-bind="visible: isHistoryByFieldVisible">
