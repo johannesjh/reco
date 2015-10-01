@@ -39,7 +39,6 @@ define(['lib/knockout', 'lib/lodash', 'constants/HistoryConstant', 'constants/Me
         this.navigation = ko.observable(navigationStrategy);
 		
         this.scrollTop = ko.observable();
-		console.log(this.scrollTop);
         this.scrollListener = _.throttle(
                     _.bind(function scrollListener(event) {			
                      connector.scroll(document.getElementById("mainView").scrollTop);                   
