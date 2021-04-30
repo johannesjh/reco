@@ -1,7 +1,16 @@
+This project is archived and not actively maintained anymore.
+
+
 reco
 ====
 
-A rapid prototyping tool for real-time collaboration with web forms.
+A research prototype / rapid prototyping tool for creating real-time collaborative user experiences with web forms.
+
+
+Project Status
+--------------
+
+Archived, not actively maintained anymore. 
 
 
 Pre-Requisites
@@ -44,5 +53,5 @@ Credits
 Contributors, in temporal order of their first contribution:
 
 * [Raphael Stary](http://raphaelstary.com/) -- [github.com/raphaelstary](https://github.com/raphaelstary/)
-* [Johannes Harms](http://johannesharms.com) -- [github.com/johannesjh](https://github.com/johannesjh/)
+* [johannesjh](github.com/johannesjh) -- [github.com/johannesjh](https://github.com/johannesjh/)
 * Serat Sütcü -- [github.com/SeratStc](https://github.com/SeratStc/)
